@@ -66,10 +66,10 @@ class CityPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                _textEditingController;
                 FocusManager.instance.primaryFocus?.unfocus();
                 log('_textEditingController  ==> ${_textEditingController.text}');
-                // Navigator.of(context).pop();
+
+                Navigator.of(context).pop(_textEditingController.text);
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 11.0, horizontal: 12.0),

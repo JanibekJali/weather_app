@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/misaldar/misal_page.dart';
+import 'package:weather_app/misaldar/test_page.dart';
 import 'package:weather_app/pages/my_home_page.dart';
 
 void main() {
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      // home: TestPage(),
+      // home: MisalPage(baa: 2, name: 'Janibek'),
     );
   }
 }

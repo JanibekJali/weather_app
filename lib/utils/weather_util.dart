@@ -1,5 +1,9 @@
 class WeatherUtil {
- static String getDescription(int temp) {
+  static String kelvinToCelcius(double kelvin) {
+    return (kelvin - 273.15).round().toString();
+  }
+
+  static String getDescription(int temp) {
     if (temp > 25) {
       return 'It\'s 🍦 time';
     } else if (temp > 20) {
@@ -11,7 +15,7 @@ class WeatherUtil {
     }
   }
 
- static String  getWeatherIcon(int condition) {
+  static String getWeatherIcon(num condition) {
     if (condition < 300) {
       return '☁';
     } else if (condition < 400) {

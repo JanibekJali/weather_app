@@ -1,5 +1,4 @@
-import 'package:weather_app/data/services/weather_services.dart';
-import 'package:weather_app/utils/weather_util.dart';
+import '../../utils/weather_util.dart';
 
 class WeatherModel {
   final String celcius;
@@ -15,15 +14,14 @@ class WeatherModel {
   });
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
-    final kelvin = json['name']['temp'] as num;
     return WeatherModel(
         cityName: json['name'],
         celcius: WeatherUtil.kelvinToCelcius(
-          kelvin,
-        ),
-        icons: WeatherUtil.getWeatherIcon(kelvin),
+          json['main']['temp'] as num,
+        ).toString(),
+        icons: WeatherUtil.getWeatherIcon(json['main']['temp'] as num),
         description: WeatherUtil.getDescription(int.parse(
-          WeatherUtil.kelvinToCelcius(kelvin),
+          WeatherUtil.kelvinToCelcius(json['main']['temp'] as num).toString(),
         )));
   }
 }

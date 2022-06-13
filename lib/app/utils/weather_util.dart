@@ -1,6 +1,6 @@
 class WeatherUtil {
-  static String kelvinToCelcius(double kelvin) {
-    return (kelvin - 273.15).round().toString();
+  static num kelvinToCelcius(num kelvin) {
+    return (kelvin - 273.15).round();
   }
 
   static String getDescription(int temp) {

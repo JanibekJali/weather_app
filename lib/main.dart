@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/pages/my_home_page.dart';
+import 'package:weather_app/app/presentation/views/weather_view.dart';
+import 'package:weather_app/app/utils/di/di_locator.dart';
 
-void main() {
+void main() async {
+  await initDI();
   runApp(const MyApp());
 }
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: WeatherView(),
     );
   }
 }

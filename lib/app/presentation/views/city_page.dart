@@ -1,14 +1,10 @@
-import 'dart:developer';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class CityPage extends StatelessWidget {
-  CityPage({Key key}) : super(key: key);
-  TextEditingController _textEditingController = TextEditingController();
+class CityView extends StatelessWidget {
+  CityView({Key key}) : super(key: key);
+  final _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    // final _width =
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -18,7 +14,6 @@ class CityPage extends StatelessWidget {
         elevation: 0.0,
       ),
       body: Container(
-        // width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/back_photo.jpg'),
@@ -32,8 +27,6 @@ class CityPage extends StatelessWidget {
               controller: _textEditingController,
               style: const TextStyle(color: Colors.white, fontSize: 22.0),
               decoration: const InputDecoration(
-                // fillColor: Colors.transparent,
-                // filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(12.0),
@@ -67,7 +60,6 @@ class CityPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusManager.instance.primaryFocus?.unfocus();
-                log('_textEditingController  ==> ${_textEditingController.text}');
 
                 Navigator.of(context).pop(_textEditingController.text);
               },
